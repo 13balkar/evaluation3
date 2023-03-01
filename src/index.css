@@ -5,6 +5,10 @@
   font-family: 'Sofia Sans Semi Condensed', sans-serif;
 }
 
+
+body,#root,.App{
+  height: 100vh;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;

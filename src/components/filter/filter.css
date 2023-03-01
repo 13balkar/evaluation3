@@ -1,15 +1,5 @@
-.body{
-    width: 100%;
-    flex: 1;
-}
 
-.card-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between
-}
-
-/* .search-filter{
+.search-filter{
     display: flex;
     font-weight: bold;
     font-size: 1.5rem;
@@ -57,4 +47,4 @@
 
 .option2>p{
     padding-right: 10px;
-} */
+}
