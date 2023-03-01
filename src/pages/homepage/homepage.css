@@ -1,0 +1,9 @@
+.page{
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-padding{
+    padding-left: 120px;
+    padding-right: 120px;
+}
