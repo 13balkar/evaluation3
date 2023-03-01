@@ -36,7 +36,13 @@ const Filter = ({ setAll, setRegistered, setBookmarked, setSeats, setShow, event
       setShow(events.filter(event => event.areSeatsAvailable));
     } 
   };
-    
+  const [value, setValue] = React.useState('EVENT NAME');
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+  const handleSearch = () => {
+    setShow(events.filter(event => event.name.toLowerCase().includes(value.toLowerCase())));
+  };
   return (
     <div >
       <div className='search-filter outer-padding'>
@@ -46,9 +52,9 @@ const Filter = ({ setAll, setRegistered, setBookmarked, setSeats, setShow, event
           <FontAwesomeIcon icon={faChevronDown} onClick={()=> setDropdown(!dropdown)} />
         </div>
         <div className='search'>
-          <input type="text" />
+          <input type="text" value={value} onClick={() => setValue('') } onChange={handleChange} />
           <div className='icon'>
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch} onClick={handleSearch} />
           </div>
         </div>
       </div>
@@ -79,7 +85,6 @@ const Filter = ({ setAll, setRegistered, setBookmarked, setSeats, setShow, event
   );
 };
 
-
 Filter.propTypes = {
   setAll: PropTypes.func.isRequired,
   setRegistered: PropTypes.func.isRequired,
@@ -93,7 +98,7 @@ Filter.propTypes = {
   registered: PropTypes.bool.isRequired,
   bookmarked: PropTypes.bool.isRequired,
   seats: PropTypes.bool.isRequired,
+  
     
 };
-
 export default Filter;

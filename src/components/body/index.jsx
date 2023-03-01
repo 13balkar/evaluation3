@@ -27,11 +27,10 @@ const Body = () => {
   }, []);
   if (error) { return <h1>Error</h1>; }
 
- 
   return events
     ? (
       <div className='body'>
-        <Filter setAll={setAll} setRegistered={setRegistered} setBookmarked={setBookmarked} setSeats={setSeats} setShow={setShow} events={events} dropdown={dropdown} setDropdown={setDropdown} all={all} registered={registered} bookmarked={bookmarked} seats={seats}/>
+        <Filter setAll={setAll} setRegistered={setRegistered} setBookmarked={setBookmarked} setSeats={setSeats} setShow={setShow} events={events} dropdown={dropdown} setDropdown={setDropdown} all={all} registered={registered} bookmarked={bookmarked} seats={seats}  />
         <div className='card-list outer-padding' >
           {show.map((event) => (
             <Card key={event.id} event={event} />
