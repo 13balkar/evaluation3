@@ -1,0 +1,28 @@
+.card-reaction{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookmark{
+    color:#EA8282;
+    font-size: 1.5rem;
+}
+
+.register{
+    display: flex;
+    font-size: 1.2rem;
+    color:#ECECAB;
+}
+.register>p{
+    padding-left: 10px;
+}
+
+.registered{
+    display: flex;
+    font-size: 1.2rem;
+    color:#A0F3AD;
+}
+.registered>p{
+    padding-left: 10px;
+}

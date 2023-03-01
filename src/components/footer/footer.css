@@ -1,5 +1,5 @@
 .footer{
-    height: 100px;
+    /* height: 100px; */
     background-color: #000000;
     color: white;
     display: flex;
@@ -13,7 +13,7 @@
 
 .theme-list{
     display: flex;
-    align-items: center;
+    
 }
 .theme{
     height: 40px;

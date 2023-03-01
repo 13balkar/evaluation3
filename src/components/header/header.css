@@ -1,5 +1,4 @@
 .header{
-    height: 100px;
     background-color: #000000;
     color: white;
     font-size: 2rem;
@@ -8,4 +7,5 @@
 .header>h1{
     display: flex;
     align-items: center;
+    font-family: 'Big Shoulders Inline Display', cursive;
 }
