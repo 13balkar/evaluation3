@@ -13,6 +13,17 @@ const Body = () => {
   const [registered, setRegistered] = React.useState(false);
   const [bookmarked, setBookmarked] = React.useState(false);
   const [seats, setSeats] = React.useState(false);
+  const [big, setBig] = React.useState(0);
+  const handleClick = (id) => {
+    if(big===0){
+      setShow(events.filter((event) => event.id === id));
+      setBig(id);
+    }else{
+      setShow(events);
+      setBig(0);
+    }
+    
+  };
 
   React.useEffect(() => {
     makeRequest(GET_EVENTS, {})
@@ -30,10 +41,10 @@ const Body = () => {
   return events
     ? (
       <div className='body'>
-        <Filter setAll={setAll} setRegistered={setRegistered} setBookmarked={setBookmarked} setSeats={setSeats} setShow={setShow} events={events} dropdown={dropdown} setDropdown={setDropdown} all={all} registered={registered} bookmarked={bookmarked} seats={seats}  />
+        { !big &&  <Filter setAll={setAll} setRegistered={setRegistered} setBookmarked={setBookmarked} setSeats={setSeats} setShow={setShow} events={events} dropdown={dropdown} setDropdown={setDropdown} all={all} registered={registered} bookmarked={bookmarked} seats={seats}  />}
         <div className='card-list outer-padding' >
           {show.map((event) => (
-            <Card key={event.id} event={event} />
+            <Card key={event.id} event={event} big={big} handleClick={ handleClick }/>
           ))}
         </div>
       </div>
